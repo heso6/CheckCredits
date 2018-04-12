@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<center><h1><span th:text="${infoMessage}" th:style="'color: green'"></span></h1></center>
+<p></p>
+<p></p>
+<form th:if="${creditInfo} == null" th:action="@{/credit}" method="post" th:object="${creditForm}"
+      style="font-size: 20px">
+
+    Dochod Miesieczny: <input type="text" th:field="*{dochodMiesieczny}">
+    <p></p>
+    Miesieczne Zobowiazania <input type="text" th:field="*{miesieczneZobowiazania}">
+    <p></p>
+    Kwota Kredytu <input type="text" th:field="*{kwotaKredytu}">
+    <p></p>
+    Ilosc Rat <input type="text" th:field="*{iloscRat}">
+    <p></p>
+    <input type="submit" value="send">
+
+</form>
+
+<p></p>
+<div th:if="${creditInfo} != null">
+    <center><h1><span
+            th:text="${creditInfo} ? 'Doskonale, otrzymasz kredyt' : 'Niestety, nie dostaniesz kredytu'"></span>
+    </h1></center>
+</div>
+
+</body>
+</html>
