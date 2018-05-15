@@ -5,34 +5,45 @@
     <title>Title</title>
 </head>
 <body>
+<div style="background-color: lightblue">
 
 <center><h1><span th:text="${infoMessage}" th:style="'color: green'"></span></h1></center>
+
 <p></p>
 <p></p>
+    <center>
+        </br>
 <form th:if="${creditInfo} == null" th:action="@{/credit}" method="post" th:object="${creditForm}"
       style="font-size: 20px">
     <p th:if="${#fields.hasErrors('dochodMiesieczny')}" th:errors="*{dochodMiesieczny}"></p>
     Dochod Miesieczny: <input type="text" th:field="*{dochodMiesieczny}">
     <p></p>
     <p th:if="${#fields.hasErrors('miesieczneZobowiazania')}" th:errors="*{miesieczneZobowiazania}"></p>
-    Miesieczne Zobowiazania <input type="text" th:field="*{miesieczneZobowiazania}">
+    Miesieczne Zobowiazania: <input type="text" th:field="*{miesieczneZobowiazania}">
     <p></p>
     <p th:if="${#fields.hasErrors('kwotaKredytu')}" th:errors="*{kwotaKredytu}"></p>
-    Kwota Kredytu <input type="text" th:field="*{kwotaKredytu}">
+    Kwota Kredytu: <input type="text" th:field="*{kwotaKredytu}">
     <p></p>
     <p th:if="${#fields.hasErrors('iloscRat')}" th:errors="*{iloscRat}"></p>
-    Ilosc Rat <input type="text" th:field="*{iloscRat}">
+    Ilosc Rat: <input type="text" th:field="*{iloscRat}">
     <p></p>
     <input type="submit" value="send">
 
 </form>
-
+        </br>
+    </center>
 <p></p>
-<div th:if="${creditInfo} != null">
-    <center><h1><span
-            th:text="${creditInfo} ? 'Doskonale, otrzymasz kredyt' : 'Niestety, nie dostaniesz kredytu'"></span>
-    </h1></center>
-</div>
+<div th:if="${creditInfo} != null" >
 
+    <center>
+        <h1><span
+            th:text="${creditInfo} ? 'Doskonale, otrzymasz kredyt!' : 'Niestety, nie dostaniesz kredytu!'">
+
+    </span></h1>
+        </br>
+    </center>
+
+</div>
+</div>
 </body>
 </html>

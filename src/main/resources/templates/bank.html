@@ -7,11 +7,11 @@
 <body>
 <div style="background-color: lightblue">
 <center><span><h1>Witamy w systemie Logowania banku</h1></span></center>
-</br>
 <center><span th:text="${info}"></span></center>
 <center><h1><span th:text="${infoLoginError}" th:style="'color: red'"></span></h1></center>
 </br>
 
+    <center>
 <form th:action="@{/}" method="post" th:object="${bankForm}" style="font-size: 20px" >
     <p th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></p>
     Login: <input type="text" th:field="*{login}">
@@ -22,7 +22,7 @@
     <input type="submit" value="send">
 </form>
     </br>
-
+    </center>
 </div>
 
 
