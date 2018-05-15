@@ -1,4 +1,4 @@
-package pl.pawellukaszewski.BankLogIn;
+package pl.pawellukaszewski;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
